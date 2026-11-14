@@ -1,0 +1,48 @@
+{
+  "name": "playwright-ecommerce-suite",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Self-contained Playwright + TypeScript test suite for a demo e-commerce shop: unit, API, cross-browser E2E and accessibility tests.",
+  "type": "module",
+  "scripts": {
+    "start": "node app/server.mjs",
+    "test": "playwright test",
+    "test:unit": "playwright test --project=unit",
+    "test:api": "playwright test --project=api",
+    "test:e2e": "playwright test --project=chromium --project=firefox --project=webkit",
+    "test:chromium": "playwright test --project=chromium",
+    "test:firefox": "playwright test --project=firefox",
+    "test:webkit": "playwright test --project=webkit",
+    "test:mobile": "playwright test --project=mobile-chrome --project=mobile-safari",
+    "test:a11y": "playwright test --project=accessibility",
+    "test:smoke": "playwright test --grep @smoke",
+    "test:headed": "playwright test --project=chromium --headed",
+    "test:debug": "playwright test --project=chromium --debug",
+    "test:ui": "playwright test --ui",
+    "report": "playwright show-report",
+    "codegen": "playwright codegen http://127.0.0.1:3100",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run lint && npm run typecheck",
+    "install:browsers": "playwright install --with-deps"
+  },
+  "engines": {
+    "node": ">=20.12"
+  },
+  "overrides": {
+    "@typescript-eslint/typescript-estree": {
+      "minimatch": "11.0.8"
+    }
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.14.0",
+    "@eslint/js": "10.0.1",
+    "@playwright/test": "1.65.1",
+    "@types/node": "24.19.2",
+    "eslint": "10.15.0",
+    "eslint-plugin-playwright": "2.12.2",
+    "globals": "17.14.0",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.72.2"
+  }
+}

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Demo Shop</title>
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/assets/styles.css" />
+    <script type="module" src="/assets/app.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="/">Demo Shop</a>
+        <form class="site-search" role="search" action="/search" method="get">
+          <label class="visually-hidden" for="site-search">Search products</label>
+          <input id="site-search" name="q" type="search" placeholder="Search products" maxlength="100" autocomplete="off" />
+          <button type="submit">Search</button>
+        </form>
+        <nav class="site-nav" aria-label="Main">
+          <a href="/login" data-nav="login">Sign in</a>
+          <a href="/account" data-nav="account" hidden>Account</a>
+          <a href="/cart" data-nav="cart" aria-label="Cart, 0 items">
+            Cart <span class="badge" data-testid="cart-count" aria-hidden="true">0</span>
+          </a>
+        </nav>
+      </div>
+    </header>
+    <main id="main" class="container" tabindex="-1" aria-busy="true"></main>
+    <footer class="site-footer">
+      <div class="container">
+        <p>Demo Shop is a practice application for automated testing. No real orders are placed.</p>
+      </div>
+    </footer>
+  </body>
+</html>
